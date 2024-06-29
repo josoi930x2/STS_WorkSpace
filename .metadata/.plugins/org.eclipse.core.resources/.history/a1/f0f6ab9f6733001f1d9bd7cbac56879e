@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>model.html</title>
+</head>
+<body>
+	<h1>[ 모델의 값 사용 ]</h1>
+	<p>HTML에 고정된 문자열</p>
+	<!-- 
+	thymeleaf : sts에서 기본적으로 제공하는 템플릿 엔진 
+	페이지 소스 보기를 하면 [[${str}]] 부분에 코드의 값만 출력
+	-->
+	<p>[[${str}]]</p>
+	<p>[[${n}]]</p>
+	<p>[[${person}]]</p>
+	<!-- <p>[[${p}]]</p>  -->	
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+package net.datasa.web2.service;
+
+import net.datasa.web2.domain.CalcDTO;
+
+//계산 관련 서비스 클래스
+
+public class CalcService {
+	//계산 메소드
+	public int clacD(CalcDTO dto) {
+		int res = 0;
+			switch (dto.getOp()) {
+				case "+": res = dto.getNum1() + dto.getNum2();
+				break;
+				
+				case "-": res = dto.getNum1() - dto.getNum2();
+				break;
+				
+				case "*": res = dto.getNum1() * dto.getNum2();
+				break;
+          
+				case "/": res = dto.getNum1() / dto.getNum2();
+				break;
+			}
+			return res;
+		}		
+}

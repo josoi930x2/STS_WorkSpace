@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>view1.html</title>
+</head>
+<body>
+	<h1>[GET method로 parameter 전달]</h1>
+	<!-- 
+	action : 폼을 전송할 서버 쪽 스크립트 파일을 지정
+	method : 폼을 서버에 전송할 http 메소드를 정함(GET or POST)
+	
+	action 경로 http://localhost:8888/param/input1 
+	-->
+	<form action="input1" method="get">  
+		ID<input type="text" name="id"><br>
+		PW<input type="password" name="pw"><br>
+		<input type="submit" value="전송"><br>
+	</form>
+</body>
+</html>

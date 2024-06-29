@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>*계산기</h1>   
+ 	<form>
+      <input type="text" class="num" id="num1" style="width: 80px" />
+      <select id="op">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+      </select>
+      <input type="text" class="num" id="num2" style="width: 80px" />
+      <span> = </span>
+      <input type="text" class="num" id="num3" readonly style="width: 80px" />
+      <input type="button" onclick="cal()" value="계산" />
+      <input type="reset" value="리셋" />
+    </form>
+
+</body>
+</html>

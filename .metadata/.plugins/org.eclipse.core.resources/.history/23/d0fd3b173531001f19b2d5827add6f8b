@@ -1,0 +1,11 @@
+package net.datasa.homework240621.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import net.datasa.homework240621.model.board;
+
+public interface boardRepository extends JpaRepository<board, Long> {
+
+
+}
+

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>imageView.html</title>
+</head>
+<body>
+	<h1>[ 이미지 사용 ]</h1>
+	<p><img src="./ImageFile/dog.jpg"></p>
+	<p><img src="ImageFile/dog.jpg"></p>
+	<p><img src="/ImageFile/dog.jpg"></p> 
+	
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>view1.html</title>
+</head>
+<body>
+	<h1>[GET method로 parameter 전달]</h1>
+	<form action="" method="">  
+		ID<input type="text" name=""><br>
+		PW<input type="password" name=""><br>
+		<input type="submit" value="전송"><br>
+	</form>
+</body>
+</html>

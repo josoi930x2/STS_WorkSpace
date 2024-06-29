@@ -1,0 +1,5 @@
+package net.datasa.homework240621.repository;
+
+public interface boardRepository {
+
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>cal4</title>
+<script>
+	function check() {
+		
+		let n1 = document.getElementById('num1');
+		let n2 = document.getElementById('num2');
+
+		if (n1.value === '' || isNaN(n1.value) ) {
+			alert('정수를 입력하세요');
+			n1.focus();
+			n1.select();
+			return false;
+		}
+		if (n2.value === '' || isNaN(n2.value) ) {
+			alert('정수를 입력하세요');
+			n2.focus();
+			n2.select();
+			return false;
+		}
+		return true;
+	}
+
+</script>
+</head>
+<body>
+	<h1>*계산기4</h1>   
+	<!-- 
+	atction 연결위치 수정할것
+	-->
+ 	<form action="calc" method="post" onsubmit="return check()">
+      <input type="text" name="num1" id="num1" style="width: 80px" />
+      <select name="op" id="op">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+      </select>
+      <input type="text" name="num2" id="num2" style="width: 80px" />
+      <input type="submit" value="계산">
+    </form>
+
+</body>
+</html>

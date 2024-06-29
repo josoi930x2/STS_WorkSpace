@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>cssView.html</title>
+</head>
+<body>
+	<h1>[ css 파일 불러오기 ]</h1>
+	<p>p태그를 사용한 문자열</p>
+
+</body>
+</html>

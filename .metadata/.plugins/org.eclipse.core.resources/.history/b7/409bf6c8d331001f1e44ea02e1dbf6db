@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="js/test.js"></script>
+</head>
+<body>
+	<h1>[ js 파일 불러오기 ]</h1>
+	<p>p태그를 사용한 문자열</p>
+	
+</body>
+</html>

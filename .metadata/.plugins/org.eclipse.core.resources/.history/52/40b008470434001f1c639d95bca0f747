@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function result() {
+		
+		let n1 = document.getElementById('num1');
+		let n2 = document.getElementById('num2');
+
+		if (n1.value === '' || n2.value === '' ) {
+			alert('숫자를 입력하세요');
+			n1.focus();
+			return false;
+		}
+		return true;
+	}
+
+</script>
+</head>
+<body>
+	<h1>*계산기</h1>   
+ 	<form action="input3" method="post" onsubmit="return result()">
+      <input type="text" class="num" id="num1" style="width: 80px" />
+      <select id="op">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+      </select>
+      <input type="text" class="num" id="num2" style="width: 80px" />
+      <span> = </span>
+      <input type="text" class="num" id="num3" readonly style="width: 80px" />
+      <input type="submit" value="계산">
+    </form>
+
+</body>
+</html>

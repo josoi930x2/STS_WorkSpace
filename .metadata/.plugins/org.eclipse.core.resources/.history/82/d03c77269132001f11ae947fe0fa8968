@@ -1,0 +1,18 @@
+package net.datasa.web2.domain;
+
+import lombok.Data;
+
+// ctrl + space
+@Data
+public class Person {
+	String name;
+	int age;
+	
+	//기본생성자
+	
+	//기타 오버로딩 생성자
+	
+	//getter, setter 
+	
+	//toString 
+}

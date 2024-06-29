@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>web1</title>
+</head>
+<body>
+	<h1> [ web1 ]</h1>
+	<!-- 
+	<p><a href="/sub">두번째 페이지로 가기</a></p>
+	<p><a href="/member/info">세번째 페이지로 가기</a></p> 
+	-->
+	
+	<ol>
+		<li><a href="image">정적 리소스 사용 - 이미지</a></li>
+		<li><a href="/sub/image2">상대 경로 테스트</a></li>
+		<li><a href="css">정적 리소스 사용 - css 파일</a></li>
+		<li><a href="js">정적 리소스 사용 - js 파일</a></li>
+	</ol>
+
+
+</body>
+</html>

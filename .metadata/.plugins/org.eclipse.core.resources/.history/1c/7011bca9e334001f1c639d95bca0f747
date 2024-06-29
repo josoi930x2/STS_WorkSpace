@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>세션값 사용</title>
+</head>
+<body>
+	<p>세션의 값 : [[${session.name}]]</p>
+</body>
+</html>
