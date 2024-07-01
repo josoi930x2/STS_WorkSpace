@@ -1,0 +1,66 @@
+package net.datasa.web2.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import lombok.extern.slf4j.Slf4j;
+
+//쿠키 테스트
+@Controller
+@RequestMapping("ck")
+@Slf4j
+public class CookieController {
+
+	//http://localhost:8888/ck/cookie1 경로로 요청이 오면
+	//이 메소드를 실행하고 메인화면으로 리다이렉트 한다. 
+	// 이곳을 왔다갔는지 확인하도록 콘솔에 문자열을 출력한다.
+	@GetMapping("cookie1")
+	public String cookie1(
+			HttpServletRequest request
+			, HttpServletResponse response) {
+		
+		log.debug(request.getRemoteAddr());
+		//쿠키 생성
+		Cookie a = new Cookie("str", "abcdefg");
+		Cookie b = new Cookie("num", "123");
+		//쿠키 종료 시점(3개월)
+		a.setMaxAge(60*60*24*3);
+		b.setMaxAge(60*60*24*3);
+		//쿠키 경로
+		a.setPath("/");
+		b.setPath("/");
+		response.addCookie(a);
+		response.addCookie(b);
+		log.debug("cookie1 실행");
+		return "redirect:/";
+	}
+	
+	@GetMapping("cookie2")
+	public String cookie2(
+		@CookieValue(name = "num", defaultValue = "0") int num,
+		@CookieValue(name = "str", defaultValue = "") String s
+		) {
+		log.debug("num쿠키 : {}", num);
+		log.debug("str쿠키 : {}", s);
+		return "redirect:/";
+	}
+	
+	@GetMapping("cookie3")
+	public String cookie3(HttpServletResponse response) {
+		//삭제할 쿠키와 같은 이름으로 쿠키 객체 생성
+		//유지시간을 0초로 지정
+		//응답객체를 통해 쿠키 저장
+		
+		Cookie c = new Cookie("num", "123"); 
+		c.setMaxAge(0);
+		response.addCookie(c);
+		return "redirect:/";
+		
+	}
+	
+}

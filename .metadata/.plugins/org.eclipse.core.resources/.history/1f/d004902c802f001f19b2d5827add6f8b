@@ -1,7 +1,0 @@
-spring.application.name=homework240621
-
-server.port=1111
-server.servlet.context-path=/
-
-logging.level.root=info
-logging.level.net.datasa.homework240621=debug

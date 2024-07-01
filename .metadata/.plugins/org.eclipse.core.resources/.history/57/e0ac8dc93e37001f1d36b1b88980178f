@@ -1,0 +1,11 @@
+package net.datasa.web2.controller;
+
+//쿠키 테스트
+
+public class CookieController {
+
+	public String cookies1() {
+		//http://localhost:8888/ck/cookie1 경로로 요청이 오면
+		//이 메소드를 실행하고 메인화면으로 리다이렉트 한다. 
+	
+}

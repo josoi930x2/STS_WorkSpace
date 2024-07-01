@@ -70,4 +70,63 @@
 		<item key="updateQualifiedNames" value="false"/>
 		<item key="patterns" value="*"/>
 	</section>
+	<section name="JavadocWizardDialog">
+		<item key="DIALOG_X_ORIGIN" value="602"/>
+		<item key="DIALOG_Y_ORIGIN" value="72"/>
+		<item key="DIALOG_WIDTH" value="718"/>
+		<item key="DIALOG_HEIGHT" value="698"/>
+		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
+	</section>
+	<section name="javadoc">
+		<item key="javadoc_command_history" value="C:\Program Files\Java\jdk-17\bin\javadoc.exe"/>
+		<item key="fromStandard" value="true"/>
+		<item key="docletname" value=""/>
+		<item key="docletpath" value=""/>
+		<item key="access" value="private"/>
+		<item key="use" value="true"/>
+		<item key="author" value="true"/>
+		<item key="version" value="true"/>
+		<item key="nodeprecated" value="false"/>
+		<item key="nodeprecatedlist" value="false"/>
+		<item key="splitindex" value="true"/>
+		<item key="noindex" value="false"/>
+		<item key="notree" value="false"/>
+		<item key="nonavbar" value="false"/>
+		<item key="openinbrowser" value="false"/>
+		<item key="source" value="1.3"/>
+		<item key="destdir" value="C:\Java\WorkSpace"/>
+		<item key="vmparam" value="-locale ko_KR -encoding UTF-8 -charset UTF-8 -docencoding UTF-8"/>
+		<section name="projects">
+			<section name="homework240621">
+				<item key="href" value=""/>
+				<item key="destdir" value="C:\Java\WorkSpace\homework240621\doc"/>
+				<item key="antpath" value="C:\Java\WorkSpace\homework240621\javadoc.xml"/>
+			</section>
+			<section name="web2">
+				<item key="href" value=""/>
+				<item key="destdir" value="C:\Java\WorkSpace"/>
+				<item key="antpath" value=""/>
+			</section>
+			<section name="boardproject">
+				<item key="href" value=""/>
+				<item key="destdir" value="C:\Users\user\git\SpringBoot\boardproject\doc"/>
+				<item key="antpath" value="C:\Users\user\git\SpringBoot\boardproject\javadoc.xml"/>
+			</section>
+			<section name="web1">
+				<item key="href" value=""/>
+				<item key="destdir" value="C:\Users\user\git\SpringBoot_web1\web1\doc"/>
+				<item key="antpath" value="C:\Users\user\git\SpringBoot_web1\web1\javadoc.xml"/>
+			</section>
+			<section name="test1">
+				<item key="href" value=""/>
+				<item key="destdir" value="C:\Java\WorkSpace\test1\doc"/>
+				<item key="antpath" value="C:\Java\WorkSpace\test1\javadoc.xml"/>
+			</section>
+			<section name="test2">
+				<item key="href" value=""/>
+				<item key="destdir" value="C:\Java\WorkSpace\test2\doc"/>
+				<item key="antpath" value="C:\Java\WorkSpace\test2\javadoc.xml"/>
+			</section>
+		</section>
+	</section>
 </section>

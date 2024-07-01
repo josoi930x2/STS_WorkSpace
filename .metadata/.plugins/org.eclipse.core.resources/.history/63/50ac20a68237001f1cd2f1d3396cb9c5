@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+    <p>[[${msg}]]</p>
+    
+    <h1>[ 로그인 ]</h1>
+	<form id="form" action="login" method="post">
+	ID <input type="text" id="id" name="id"><br>
+		<input type="submit" value="가입">
+	</form>
+</body>
+</html>
