@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>delete.html</title>
+<script src="../js/jquery-3.7.1.min.js"></script>
+<script>
+	// 제이쿼리를 사용해서 페이지 로딩되면 바로 실행되는 함수 정의
+	// 로컬스토리지와 세션스토리지의 값 삭제
+	// 콜백함수
+	$(document).ready(function() {
+		localStroage.removeItem('code');
+		sessionStroage.removeItem('code');
+	});
+
+</script>
+</head>
+<body>
+	<h1>삭제하기</h1>
+	<P>삭제되었습니다.</P>
+	
+</body>
+</html>

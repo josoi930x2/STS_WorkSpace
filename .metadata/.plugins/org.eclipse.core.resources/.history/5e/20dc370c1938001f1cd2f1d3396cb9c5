@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>delete.html</title>
+<script src="../js/jquery-3.7.1.min.js"></script>
+<script>
+window.onload = function() {
+	
+	$('code').html();
+	
+	
+	//localStorage.clear();
+	//sessionStorage.clear();
+}
+
+</script>
+</head>
+<body>
+	<h1>삭제하기</h1>
+	<P>삭제되었습니다.</P>
+	
+</body>
+</html>

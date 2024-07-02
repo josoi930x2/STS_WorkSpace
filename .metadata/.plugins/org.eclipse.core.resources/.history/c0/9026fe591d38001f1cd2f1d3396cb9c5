@@ -1,0 +1,43 @@
+package net.datasa.web2.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import lombok.extern.slf4j.Slf4j;
+import net.datasa.web2.domain.Person;
+
+/**
+ * 타임리프 문법 연습
+ */
+
+@Controller
+@RequestMapping("th")
+@Slf4j
+public class ThymeleafController {
+	
+	@GetMapping("thymeleaf1")
+	public String thymeleaf1(Model model) {
+		String str = "문자열";
+		int num = 99999;
+		Person p = new Person("홍길동", 20, "010-1234-5678");
+		String tag = "<marquee>HTML태그를 포함한 문자열</marquee>";
+		String url = "https://google.com";		
+		return "th/thymeleaf1";
+		
+		model.addAttribute("str", str);
+		model.addAttribute("num", num);
+		model.addAttribute("person", p);
+		model.addAttribute("tag", tag);
+		model.addAttribute("url", url);
+		
+		
+	}
+	
+	@GetMapping("thymeleaf2")
+	public String thymeleaf2() {
+		return "th/thymeleaf2";
+	}
+
+}
