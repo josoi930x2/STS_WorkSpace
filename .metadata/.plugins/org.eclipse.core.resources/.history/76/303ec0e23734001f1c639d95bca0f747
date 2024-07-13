@@ -1,9 +1,0 @@
-spring.application.name=web2
-
-server.port=8888
-
-server.servlet.context-path=/
-
-logging.level.root=info
-
-logging.level.net.datasa.web2=debug

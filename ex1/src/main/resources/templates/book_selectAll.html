@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+	  xmlns:sec="http://thymeleaf.org/extras/spring-security">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+  table {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+  
+  th {
+    border: 1px solid black;
+    background-color: lightgray;
+  }
+  
+  td {
+    border: 1px solid black;
+  }
+</style>
+
+<script th:src="@{/js/jquery-3.7.1.min.js}"></script> 
+<script th:inline="javascript"></script>
+
+
+</head>
+<body>
+
+	<h1> [보유 책 전체조회] </h1>
+<table>
+	<tr>
+		<td>ISBN</td>
+		<td>제목</td>
+		<td>저자</td>
+		<td>출판사</td>
+		<td>출판날짜</td>
+		<td>가격</td>
+		<td>할인율</td>
+	</tr>
+	<tr> 조회결과가 없는 경우 </tr>
+	<tr th:if="${booklist}" th:each=""> </tr>
+		
+
+</table>
+
+
+
+
+</body>
+</html>

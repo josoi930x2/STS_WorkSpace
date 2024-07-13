@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="css/formStyle.css" />
+</head>
+<body>
+ <div class="container">
+      <div class="member-container">
+        <div class="header">
+          <div>학생 정보를 입력해주세요</div>
+        </div>
+        <div class="user-info">
+          <div>* ID <input type="text" name="id" required="required"></div>
+          <div>* 이름 <input type="text" name="name" required="required"></div>
+          <div>* 주소 <input type="text" name="address" required="required"></div>
+          <div>* 전화번호 <input type="text" name="phone" required="required"></div>
+          <div class="group">
+      	   * 반 선택 &nbsp;<select name="group">
+      	   		<option value="A">A</option>
+      	   		<option value="B">B</option>
+      	   		<option value="C">C</option>
+      	   </select>	
+       </div>
+        </div>
+        <div class="gender">
+          <input type="radio" name="gender" />
+          <label for="women">여성</label>
+          <input type="radio" name="gender" />
+          <label for="men">남성</label>
+        </div>
+       
+        <div class="btn">
+          <button>가입하기</button>
+        </div>
+      </div>
+    </div>
+</body>
+</html>

@@ -19,8 +19,8 @@
 	<section name="JavaElementSearchActions">
 	</section>
 	<section name="NewClassCreationWizard.dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="981"/>
-		<item key="DIALOG_Y_ORIGIN" value="162"/>
+		<item key="DIALOG_X_ORIGIN" value="1020"/>
+		<item key="DIALOG_Y_ORIGIN" value="220"/>
 		<item key="DIALOG_WIDTH" value="696"/>
 		<item key="DIALOG_HEIGHT" value="743"/>
 		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
@@ -44,7 +44,7 @@
 		<item key="org.eclipse.jdt.internal.ui.text.JavaOutlineInformationControlDIALOG_USE_PERSISTED_LOCATION" value="false"/>
 	</section>
 	<section name="NewPackageCreationWizard.dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="968"/>
+		<item key="DIALOG_X_ORIGIN" value="851"/>
 		<item key="DIALOG_Y_ORIGIN" value="290"/>
 		<item key="DIALOG_WIDTH" value="622"/>
 		<item key="DIALOG_HEIGHT" value="500"/>
@@ -69,6 +69,8 @@
 		<item key="updateTextualMatches" value="false"/>
 		<item key="updateQualifiedNames" value="false"/>
 		<item key="patterns" value="*"/>
+		<item key="updateSimilarElements" value="false"/>
+		<item key="updateSimilarElementsMatchStrategy" value="1"/>
 	</section>
 	<section name="JavadocWizardDialog">
 		<item key="DIALOG_X_ORIGIN" value="602"/>
@@ -93,8 +95,8 @@
 		<item key="notree" value="false"/>
 		<item key="nonavbar" value="false"/>
 		<item key="openinbrowser" value="false"/>
-		<item key="source" value="1.3"/>
-		<item key="destdir" value="C:\Java\WorkSpace"/>
+		<item key="source" value="17"/>
+		<item key="destdir" value="C:\Java\Description"/>
 		<item key="vmparam" value="-locale ko_KR -encoding UTF-8 -charset UTF-8 -docencoding UTF-8"/>
 		<section name="projects">
 			<section name="homework240621">
@@ -104,7 +106,7 @@
 			</section>
 			<section name="web2">
 				<item key="href" value=""/>
-				<item key="destdir" value="C:\Java\WorkSpace"/>
+				<item key="destdir" value="C:\Java\Description"/>
 				<item key="antpath" value=""/>
 			</section>
 			<section name="boardproject">
@@ -128,5 +130,16 @@
 				<item key="antpath" value="C:\Java\WorkSpace\test2\javadoc.xml"/>
 			</section>
 		</section>
+	</section>
+	<section name="org.eclipse.jdt.internal.ui.dialogs.OpenTypeSelectionDialog2">
+		<item key="ShowStatusLine" value="true"/>
+		<item key="History" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0D;&#x0A;&lt;History/&gt;"/>
+	</section>
+	<section name="DialogBounds_SuperInterfaceSelectionDialog">
+		<item key="DIALOG_X_ORIGIN" value="141"/>
+		<item key="DIALOG_Y_ORIGIN" value="-70"/>
+		<item key="DIALOG_WIDTH" value="425"/>
+		<item key="DIALOG_HEIGHT" value="681"/>
+		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
 	</section>
 </section>

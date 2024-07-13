@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="/js/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+	<h1>[ 책 정보등록 ]</h1>
+	
+	 <form name="register" action="save" method="post">
+        <table border=1>
+        	<tr>
+                <td>ISBN</td>
+                <td><input type="text" name="ISBN"></td>
+            </tr>
+            <tr>
+                <td>제목</td>
+                <td><input type="text" name="title"></td>
+            </tr>
+            <tr>
+                <td>저자</td>
+                <td><input type="text" name="author">
+            </tr>
+            <tr>
+                <td>출판사</td>
+                <td><input type="text" name="publisher">
+            </tr>
+            <tr>
+                <td>출판날짜</td>
+                <td><input type="date" name="reg_date">
+            </tr>
+            <tr>
+                <td>가격</td>
+                <td><input type="text" name="price">
+            </tr>
+            <tr>
+                <td>할인율</td>
+                <td><input type="text" name="discount">
+            </tr>
+ 
+        </table>
+        <br> <input type="submit" value="전송" onclick="return inputCheck()">            
+        <input type="reset"    value="취소">
+    </form>
+	
+</body>
+</html>

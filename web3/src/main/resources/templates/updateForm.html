@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>save1</title>
+</head>
+<body>
+
+ <h1>[ 수정 ]</h1>
+
+ <form action="update" method="post">
+    	
+     <!-- 아이디는 못고치지만, 함께 DB에 저장되어야하므로 html에서 hidden으로 처리 -->
+     <input type="hidden" name="id" th:value="${person.id}">
+     <br />
+     이름<input type="text" name="name" th:value="${person.name}" required="required">
+     <br />
+     나이<input type="number" name="age" th:value="${person.age}"  required="required">
+     <br />
+     <input type="submit" value="수정">
+</form>	
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+	  xmlns:sec="http://thymeleaf.org/extras/spring-security">
+<head>
+<meta charset="UTF-8">
+<title>ID 조회</title>
+</head>
+<body>
+
+<h3>[ ID 조회 ]</h3>
+
+<!-- 
+	abc : 없는 회원 입니다.
+ -->
+
+<!-- 
+	ID : abc
+	이름 : 홍길동
+	나이 : 20
+ -->
+ 
+ <div th:if="${person != null}">
+ 	<p>ID : <span th:text="${person.id}"></span></p>
+	<p>이름 : <span th:text="${person.name}"></span></p>
+	<p>나이 : <span th:text="${person.age}"></span></p>
+</div>
+
+ <div th:if="${person == null}">
+	<p><span th:text="${id}"></span> : 없는 회원입니다.</p>
+</div>
+
+
+</body>
+</html>

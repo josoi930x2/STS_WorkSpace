@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+	  xmlns:sec="http://thymeleaf.org/extras/spring-security">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+  table {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+  
+  th {
+    border: 1px solid black;
+    background-color: lightgray;
+  }
+  
+  td {
+    border: 1px solid black;
+  }
+</style>
+
+<!-- 상대경로 -->
+<script src="/js/jquery-3.7.1.min.js"></script>
+<!--/* 절대경로
+어디서든 사용 가능
+<script th:src="@{/js/jquery-3.7.1.min.js}"></script> 
+*/-->
+<script th:inline="javascript">
+
+
+        function deleteUser(id){
+            console.log(id);
+            if (confirm(id + ' 회원을 삭제하시겠습니까?')){
+            	// confirm의 결과값(true,flase) 자체가 조건이 될 수 있음
+                location.href="deleteUser?id=" + id;
+            	// location.href -> 현재 주소의 값
+            	// location.href="deleteUser/" + id; ->1.주소의 일부 2.파라미터값으로 넘어감
+            }
+        }
+        
+        $(document).ready(function() {
+        	// ajax 불러오기 등 사전 작업
+        	$('.delButton').on('click', del);
+        	function del(){
+        		let btn = $(this).attr('data-id');
+        		if (confirm(btn + ' 회원을 삭제하시겠습니까?')){
+        			location.href="deleteUser?id=" + btn;
+        			}
+        		}
+        	});
+        
+        
+        /* $(document).ready(function() {
+        	
+        	[방법1]
+        	$('.delButton').on('click', function() {
+        		let id = $(this).attr('data-id');
+        		//let id = $(this).data('id');로도 작성 가능
+        		
+        		//html(), val(), text, attr, css, addClass 
+        		//참고: vs 04문서객체
+        		
+        		if (confirm(id + ' 회원을 삭제하시겠습니까?')){
+        			location.href="deleteUser/" + id;
+        			}
+        	});
+        	
+        	[방법2] 
+        	$('.delButton').click(function() {}); 
+        	
+        });
+        */
+        
+
+</script>
+
+</head>
+<body>
+	<h1> [ 회원 ] </h1>
+	
+<table>	
+	<tr>
+	<th>번호</th>
+	<th>아이디1</th>
+	<th>아이디2</th>
+	<th>삭제1</th>
+	<th>삭제2</th>
+	<th>삭제3</th>
+	<th>삭제4</th>
+	</tr>
+	<tr th:if="${personlist == null or personlist.isEmpty()}">
+	  	<td colspan="2"> 조회결과가 없습니다.</td>
+	</tr>
+	<tr th:if="${personlist}" th:each="person, status :${personlist}">
+	  	<td th:text="${status.count}"></td>
+	  	<td><a th:href="|view?id=${person.id}|" th:text=${person.id}></a></td>
+	  	<td><a th:href="@{/info/{viewid}(viewid=${person.id})}" th:text=${person.id}></a></td>
+	  	<td><a th:href="@{/remove/{removeid}(removeid=${person.id})}">삭제</a></td>  	
+	  	<!-- 삭제에 링크를 걸어 서버의 특정 경로로 요청을 보냄
+	  	요청을 보낼때 누른곳 옆의 아이디를 같이 보냄
+	  	서버에서는 해당 아이디를 삭제하고 회원 목록으로 되돌아옴 -->
+	    <td><a th:href="|deleteUser?id=${person.id}|">삭제</a></td>
+	    <td><button><a th:href="|javascript:deleteUser('${person.id}')|">삭제</a></button></td>
+	    <!-- javascript:함수명 ->형식대로 작성안하면 함수 호출 안됨 -->
+	    <td><button class="delButton" th:data-id="${person.id}">삭제</button></td>
+	    <!-- data-id : 사용자가 정의한 속성, html내에 없는 name이어야 함 -->
+		<td><a th:href="|update?id=${person.id}|">수정</a></td>
+	</tr>
+</table>
+
+		<!-- 
+	  	1.삭제에 링크를 걸어 서버의 특정 경로로 요청을 보냄
+	  	요청을 보낼때 누른곳 옆의 아이디를 같이 보냄
+	  	서버에서는 해당 아이디를 삭제하고 회원목록으로 돌아옴
+	  	
+	  	2.삭제 버튼을 클릭하면 "xxx 회원을 삭제하시겠습니까?" 물어보고
+	  	확인 누르면 삭제. 나머지는 위와 같음 
+	  	
+	  	3.삭제 버튼을 클릭하면 jQuery로 이벤트 처리하며, 버튼 내의
+	  	사용자 정의 속성값(삭제할 아이디)를 읽어서 처리한다.
+	  	-->
+
+</body>
+</html>
