@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+	  xmlns:sec="http://thymeleaf.org/extras/spring-security">
+<head>
+<meta charset="UTF-8">
+<title>회원가입</title>
+
+<link rel="stylesheet" href="/css/joinForm_style.css" />
+<script th:src="@{/js/jquery-3.7.1.min.js}"></script> 
+<script src="/js/updateForm_js.js"></script>
+
+
+
+</head>
+<body>
+ <p>[ 개인정보 수정 ]</p> 
+
+ <form id="updateForm" th:action="@{/member/info}" method="post">
+      <div class="container">
+    <div class="insert">
+    
+        <table>
+    <caption><h2>[개인정보 수정]</h2></caption>
+    
+    <tr>
+        <td class="col1">ID</td>
+        <td class="col2">
+            <input type="text" name="memberId2" id="id" th:placeholder="${member.memberId}" readonly="readonly">
+        <input type="hidden" name="memberId" th:value="${member.memberId}">
+        </td>
+    </tr>
+    
+    <tr>
+        <td class="col1">비밀번호</td>
+        <td class="col2">
+            <input type="password" name="memberPassword" id="password" maxlength="16" placeholder="비밀번호 입력"><br>
+            <input type="password" id="password2" maxlength="16" placeholder="비밀번호 다시입력">
+            <p>※비밀번호는 <span class="num">문자, 숫자, 특수문자(~!@#$%^&*)의 조합 4 ~ 16자리</span>로 입력이 가능합니다.</p>
+            <!--제이쿼리 처리 = 빈칸 : 비밀번호 유지, 입력 : 비밀번호 수정  -->
+        </td>
+    </tr>
+    
+    <tr>
+        <td class="col1">이름</td>
+        <td class="col2"><input type="text" name="memberName" id="name" th:value="${member.memberName}"></td>
+    </tr>
+    
+    <tr>
+        <td class="col1">이메일</td>
+        <td class="col2"><input type="text" name="email" th:value="${member.email}"></td>
+    </tr>
+    
+    <tr>
+        <td class="col1">전화번호</td>
+        <td class="col2"><input type="text" name="phone" th:value="${member.phone}"></td>
+    </tr>
+    
+    <tr>
+        <td class="col1">주소</td>
+        <td class="col2"><input style="width:400px;" type="text" name="address" th:value="${member.address}"></td>
+    </tr>
+   
+    </table>
+    
+  </div>
+ 
+  <div class="create">
+    
+        <input class="but3" id="subButton" type="submit" value="수정" >
+        
+        <input class="but4" type="reset" value="다시쓰기" onclick="">
+    
+  </div>
+  </div>
+  </form>
+ </body>
+
+</html>

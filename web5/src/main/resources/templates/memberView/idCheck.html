@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+	  xmlns:sec="http://thymeleaf.org/extras/spring-security">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script th:src="@{/js/jquery-3.7.1.min.js}"></script>
+
+<script>
+$(document).ready(function() {
+	$('#inputButton').click(function() {
+		let id = $(this).data('id');
+		//let id = $(this).attr('data-id');
+		//html에서 클릭된 버튼 (#inputButton) 요소의 data-id 속성 값을 가져옴
+		
+		$(opener.document).find('#id').val(id);
+		//opener.document.getElementById('id').value = id;
+		
+		
+		/* 코드설명 
+		$(opener.document): 이 코드는 현재 창을 연 부모 창의 문서를 선택합니다. 
+		opener 객체는 새 창이나 팝업 창을 열 때 부모 창에 대한 참조를 제공합니다.
+		
+		.find('#id'): 부모 창 문서에서 id가 id인 요소를 찾습니다.
+		.val(id): 찾은 요소의 값을 앞서 가져온 id 값으로 설정합니다. 
+		즉, 부모 창의 id 필드에 id 값을 입력합니다. */
+		
+		window.close();
+	});
+});
+</script>
+
+
+</head>
+<body>
+
+<h1>[ ID 중복확인 ]</h1>
+
+ <form id="searchForm" action="idCheck" method="post" >
+	검색할 ID <input type="text" name="searchId" id="searchId">
+	<input type="submit" value="검색">
+ </form>
+
+<!-- 검색후에만 출력 -->
+	<div th:if="${searchId != null}">
+<!-- 사용가능한 경우에만 출력 -->
+		<div th:if="${result}">
+			<p><span th:text="${searchId}"></span><span>: 사용 가능한 아이디입니다.</span></p>
+			<input type="button" value="사용하기" 
+			id="inputButton" th:data-id="${searchId}" onclick="useId">
+		</div> 
+			
+		<div th:if="${not result}">
+			<p>이미 사용중인 아이디입니다.</p>
+		</div> 
+	</div> 
+
+ 
+</body>
+</html>

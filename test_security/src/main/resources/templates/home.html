@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test_security</title>
+</head>
+<body>
+<h1>[ test_security ]</h1>
+
+<p><a href="view1">view1</a></p> 
+
+<p sec:authorize="isAuthenticated()"><a href="view2">view2</a></p> 
+
+<p sec:authorize="not isAuthenticated()"><a href="loginForm">로그인</a></p>
+
+<p sec:authorize="isAuthenticated()"><a href="logout">로그아웃</a></p>
+
+<p><a href="thymeleaf">타임리프 테스트</a></p>
+ 
+</body>
+</html>

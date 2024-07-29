@@ -16,10 +16,10 @@ public class Ex1Controller {
 		return "register";
 	}
 	
-	@GetMapping("search")
-	public String search() {
-		return "search";
-	}
+//	@GetMapping("search")
+//	public String search() {
+//		return "search";
+//	}
 	
 
 }

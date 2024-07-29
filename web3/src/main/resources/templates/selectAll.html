@@ -101,10 +101,10 @@
 	  	<!-- 삭제에 링크를 걸어 서버의 특정 경로로 요청을 보냄
 	  	요청을 보낼때 누른곳 옆의 아이디를 같이 보냄
 	  	서버에서는 해당 아이디를 삭제하고 회원 목록으로 되돌아옴 -->
-	    <td><a th:href="|deleteUser?id=${person.id}|">삭제</a></td>
-	    <td><button><a th:href="|javascript:deleteUser('${person.id}')|">삭제</a></button></td>
+	    <td><a th:href="|deleteUser?id=${person.id}|">삭제1</a></td>
+	    <td><button><a th:href="|javascript:deleteUser('${person.id}')|">삭제2</a></button></td>
 	    <!-- javascript:함수명 ->형식대로 작성안하면 함수 호출 안됨 -->
-	    <td><button class="delButton" th:data-id="${person.id}">삭제</button></td>
+	    <td><button class="delButton" th:data-id="${person.id}">삭제3</button></td>
 	    <!-- data-id : 사용자가 정의한 속성, html내에 없는 name이어야 함 -->
 		<td><a th:href="|update?id=${person.id}|">수정</a></td>
 	</tr>

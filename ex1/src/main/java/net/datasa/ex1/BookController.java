@@ -28,7 +28,7 @@ public class BookController {
 	}
 	
 	
-	@PostMapping("search")
+	@GetMapping("search")
 	public String search(@RequestParam("ISBN") String ISBN,
 			Model model) {
 		
@@ -43,12 +43,18 @@ public class BookController {
 	
 	@GetMapping("selectAll")
 	public String selectAll(Model model) {
-		
 		List<BookDTO> booklist = bookService.selectAll();
-		
 		model.addAttribute("booklist", booklist);
-		
 		return "book_selectAll";
+	}
+	
+	@GetMapping("delete")
+	public String delete(@RequestParam("ISBN") String ISBN
+			, Model model) {
+
+		bookService.delete(ISBN);
+		
+		return "redirect:/selectAll";
 	}
 	
 	

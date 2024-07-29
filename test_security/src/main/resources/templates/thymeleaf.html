@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://thymeleaf.org"
+	  xmlns:sec="http://thymeleaf.org/extras/spring-security">
+<head>
+<meta charset="UTF-8">
+<title>test_security</title>
+</head>
+<body>
+<h1>thymeleaf의 security 관련 속성, 객체</h1>
+
+
+<!-- 로그인하지 않은 경우 -->
+<div sec:authorize="not isAuthenticated()">
+	<p>로그인하지 않음</p>
+</div>
+
+
+<!-- 로그인한 경우 -->
+<div sec:authorize="isAuthenticated()">
+	<p>* ROLE_USER 권한을 가지고 있는지</p>
+	<p sec:authorize="hasRole('USER')"> 일반 사용자 입니다.</p>
+	<p>* ROLE_ADMIN 권한을 가지고 있는지</p>
+	<p sec:authorize="hasRole('ADMIN')"> 관리자 입니다.</p>
+</div>
+<br>
+<p>* 로그인한 아이디 ex)~님 로그인 중</p>
+<p sec:authentication="name"></p>
+<p>* 로그인시 사용된 객체정보</p>
+<p sec:authentication="principal"></p>
+<p>* 권한</p>
+<p sec:authentication="principal.authorities"></p>
+<br>
+<p>* 인증정보</p>
+<p th:text="${#authentication}"></p>
+<p th:text="${#authentication.name}"></p>
+<p th:text="${#authentication.principal}"></p>
+<p th:text="${#authentication.principal.enabled}"></p>
+<br>
+<p>* 로그인 아이디 확인 예</p>
+<p th:if="${#authentication.name == 'abc'}">ID는 abc입니다.</p>
+
+<p sec:authorize="isAuthenticated()" 
+th:if="${#authentication.name == 'abc'} or ${#authorization.expression('hasRole(''ADMIN'')')}">삭제</p>
+<!-- ''ADMIN'' 중첩 이유? 문자열 -->
+
+</body>
+</html>

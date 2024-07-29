@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+	  xmlns:sec="http://thymeleaf.org/extras/spring-security">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script th:src="@{/js/jquery-3.7.1.min.js}"></script>
+
+<style>
+	table,
+    td,
+    th {
+        border: 1px double black;
+        border-collapse: collapse;
+        padding: 10px;
+      }
+</style>
+
+</head>
+<body>
+
+
+	<table th:each="list : ${list}" class="list">
+		<tr>
+		  <th>ID : </th>
+		  <td th:text="${list.memberId}">아이디</td>
+		</tr>
+		
+		<tr>
+		  <th>이름 : </th>
+		  <td th:text="${list.memberName}">이름</td>
+		</tr>
+		
+		<tr>
+		  <th>이메일 : </th>
+		  <td th:text="${list.email}">이메일</td>
+		</tr>
+		
+		<tr>
+		  <th>전화번호 : </th>
+		  <td th:text="${list.phone}">이메일</td>
+		</tr>
+		
+		<tr>
+		  <th>주소 : </th>
+		  <td th:text="${list.address}">이메일</td>
+		</tr>
+
+	</table>
+
+
+</body>
+</html>

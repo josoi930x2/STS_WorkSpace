@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://thymeleaf.org"
+	  xmlns:sec="http://thymeleaf.org/extras/spring-security">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<p>[web5]</p>
+	<!--/* <p sec:authorize="isAuthenticated()"></p> <span th:text = "${#authentication.name}"> */-->
+	<div sec:authorize="not isAuthenticated()" ></div>
+	<p><a th:href="@{/member/joinForm}">회원가입</a></p>
+	<p><a th:href="@{/member/loginForm}">로그인</a></p>
+	
+	
+	<div sec:authorize="isAuthenticated()" ></div>
+	<p><a th:href="@{/member/logout}">로그아웃</a></p>
+	<p><a th:href="@{/member/info}">개인정보 수정</a></p>
+		
+	<p><a th:href="@{/member/memberList}">회원 목록조회</a></p>
+	
+	
+	
+	
+</body>
+</html>

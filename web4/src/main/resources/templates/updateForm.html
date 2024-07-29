@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+	  xmlns:sec="http://thymeleaf.org/extras/spring-security">
+<head>
+<meta charset="UTF-8">
+<title>updateForm</title>
+</head>
+<body>
+
+	<h1>web4 Guestbook 수정</h1>
+	
+	 <form action="update" method="post">
+    	
+     <!-- 아이디는 못고치지만, 함께 DB에 저장되어야하므로
+     
+      html에서 hidden으로 처리 -->
+     <input type="hidden" name="num" th:value="${updategb.num}">
+     <br />
+    
+     작성자<input type="text" name="name" th:value="${updategb.name}" required="required">
+     <br />
+     내용 <textarea cols="30" rows="10" name="message" th:text="${updategb.message}" required="required"></textarea>    
+     <br />
+     <input type="submit" value="수정">
+	</form>	
+	
+</body>
+</html>

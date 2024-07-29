@@ -17,6 +17,7 @@
 	<p>출판날짜 : <span th:text="${book.reg_date}"></span></p>
 	<p>정가 : <span th:text="${book.price}"></span></p>
 	<p>할인율 : <span th:text="${book.discount}"></span></p>
+	<!--/* <p>할인가격 : <span th:text="|${book.discount}*${book.discount}|"> </span></p> */-->
 </div>
 
  <div th:if="${book == null}">

@@ -1,0 +1,14 @@
+
+* 경로
+/member/joinForm - 회원가입 양식
+/member/join - 회원가입
+
+/member/loginForm - 로그인
+/member/logout - 로그아웃
+/member/info - 정보수정
+->멤버 컨트롤러
+
+/board/list - 게시판 글목록
+/board/write - 글쓰기
+/board/delete - 글삭제
+->보드 컨트롤러

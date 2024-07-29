@@ -3,6 +3,7 @@ package net.datasa.web3;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import jakarta.persistence.EntityNotFoundException;
@@ -22,6 +23,8 @@ import lombok.RequiredArgsConstructor;
 public class PersonService {
 	
 	private final PersonRepository personRepository;
+	
+	ModelMapper modelMapper = new ModelMapper();
 	
 /**
 1) DB연결 코드
@@ -52,10 +55,14 @@ public class PersonService {
 	// DB에 저장하려면 엔티티로 전달받은 값을 옮겨야 함
 	// ModelMapper 사용해 자동화가능
 	// 예외발생할 경우, 컨트롤러에서 정의하는 것을 권장
-		PersonEntity entity = new PersonEntity();
-		entity.setId(dto.getId());
-		entity.setName(dto.getName());
-		entity.setAge(dto.getAge());	
+//		PersonEntity entity = new PersonEntity();
+//		entity.setId(dto.getId());
+//		entity.setName(dto.getName());
+//		entity.setAge(dto.getAge());	
+//		
+		PersonEntity entity = modelMapper.map(dto, PersonEntity.class);
+		//gradle에 의존성 추가하고 refresh~~~ 필수
+		
 	
 		personRepository.save(entity);
 		// save : jpa에서 정해진 method

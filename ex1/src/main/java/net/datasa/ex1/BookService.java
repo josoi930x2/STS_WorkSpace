@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
@@ -69,6 +70,21 @@ public class BookService {
 		}
 		return dtoList;
 	}
+
+	public boolean delete(String ISBN) {
+		
+		boolean result = bookRepository.existsById(ISBN);
+		// id가 존재하는지 여부만 조회
+		if (result) {
+			bookRepository.deleteById(ISBN);
+			//해당되는 id가 없을 경우 아무동작x
+		}
+		
+		return result;
+		
+	}
+	
+	
 
 
 }

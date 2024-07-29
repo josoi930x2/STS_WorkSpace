@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <style>
   table {
     border: 1px solid black;
@@ -21,9 +21,21 @@
   }
 </style>
 
-<script th:src="@{/js/jquery-3.7.1.min.js}"></script> 
-<script th:inline="javascript"></script>
 
+<script>
+
+	$(document).ready(function() {
+	// ajax 불러오기 등 사전 작업
+	$('.delButton').on('click', del);
+	function del(){
+		let btn = $(this).attr('data-id');
+		if (confirm(btn + '를 삭제하시겠습니까?')){
+			location.href="delete?ISBN=" + btn;
+			}
+		}
+	});
+
+</script>
 
 </head>
 <body>
@@ -31,6 +43,7 @@
 	<h1> [보유 책 전체조회] </h1>
 <table>
 	<tr>
+		<th>번호</th>
 		<td>ISBN</td>
 		<td>제목</td>
 		<td>저자</td>
@@ -38,15 +51,23 @@
 		<td>출판날짜</td>
 		<td>가격</td>
 		<td>할인율</td>
+		<td>할인가격</td>
 	</tr>
-	<tr> 조회결과가 없는 경우 </tr>
-	<tr th:if="${booklist}" th:each=""> </tr>
-		
-
-</table>
-
-
-
+	<tr th:if="${booklist == null or booklist.isEmpty()}">
+	  	<td colspan="9"> 조회결과가 없습니다.</td>
+	</tr>
+	<tr th:if="${booklist}" th:each="book, status : ${booklist}">
+		<td th:text="${status.count}"></td>
+		<td><a th:href="|search?id=${book.ISBN}|" th:text=${book.ISBN}></a></td>
+		<td th:text=${book.title} > </td>
+		<td th:text=${book.author} > </td>
+		<td th:text=${book.publisher} > </td>
+		<td th:text=${book.reg_date} > </td>
+		<td th:text=${book.price} > </td>
+		<td th:text=${book.discount} > </td>
+		<td th:text="|${book.price * book.discount}|" > </td>
+		<td><button class="delButton" th:data-id="${book.ISBN}">삭제3</button></td>
+	</tr>
 
 </body>
 </html>
