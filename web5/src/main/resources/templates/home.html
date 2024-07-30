@@ -7,19 +7,19 @@
 </head>
 <body>
 	<p>[web5]</p>
-	<!--/* <p sec:authorize="isAuthenticated()"></p> <span th:text = "${#authentication.name}"> */-->
-	<div sec:authorize="not isAuthenticated()" ></div>
+	<p sec:authorize="isAuthenticated()"><span th:text = "${#authentication.name}"></p> 
+	<div sec:authorize="not isAuthenticated()" >
 	<p><a th:href="@{/member/joinForm}">회원가입</a></p>
 	<p><a th:href="@{/member/loginForm}">로그인</a></p>
+	</div>
 	
-	
-	<div sec:authorize="isAuthenticated()" ></div>
+	<div sec:authorize="isAuthenticated()">
 	<p><a th:href="@{/member/logout}">로그아웃</a></p>
 	<p><a th:href="@{/member/info}">개인정보 수정</a></p>
-		
 	<p><a th:href="@{/member/memberList}">회원 목록조회</a></p>
+	</div>
 	
-	
+	<p><a href="board/list">게시판</a></p>
 	
 	
 </body>

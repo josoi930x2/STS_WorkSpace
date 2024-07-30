@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -39,6 +40,7 @@ public class GuestbookEntity {
 	@Column(name = "password", nullable = false, length = 100)
 	private String password;
 	
+	//가장 먼저 실행되는 Web5Application에 @EnableJpaAuditing 
 	//글내용
 	@Column(name = "message", nullable = false, columnDefinition = "text")
 	private String message;
